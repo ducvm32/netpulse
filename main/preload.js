@@ -7,11 +7,11 @@ contextBridge.exposeInMainWorld("api", {
   ping: () => ipcRenderer.invoke("ping"),
   dns: () => ipcRenderer.invoke("dns-check"),
   speed: () => ipcRenderer.invoke("speed-test"),
-  resolve: (d) => ipcRenderer.invoke("resolve-domain", d)
+  resolve: (d) => ipcRenderer.invoke("resolve-domain", d),
 });
 
 contextBridge.exposeInMainWorld("windowCtl", {
   close: () => ipcRenderer.send("win-close"),
   min: () => ipcRenderer.send("win-min"),
-  max: () => ipcRenderer.send("win-max")
+  max: () => ipcRenderer.send("win-max"),
 });

@@ -2,7 +2,7 @@
   "name": "NetPulse",
   "version": "1.0.0",
   "description": "Network Diagnostic Tool",
-  "main": "main.js",
+  "main": "./main/main.js",
   "author": "@ducvm32",
   "scripts": {
     "start": "electron .",

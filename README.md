@@ -51,19 +51,12 @@
 
 ---
 
-## 📦 Cài đặt & Chạy thử
+## 📦 Cài đặt & Chạy thử (Only Windows)
 
 ### 1️⃣ Clone source
 
-````bash
+```bash
 git clone https://github.com/ducvm32/netpulse.git
 cd netpulse
 
-## Linux Dependencies
-
-Before running NetPulse on Linux, install required system libraries:
-
-### Ubuntu / Debian
-```bash
-sudo apt install libnss3 libatk-bridge2.0-0 libgtk-3-0 libxss1 libasound2 libgbm1
-````
+```
