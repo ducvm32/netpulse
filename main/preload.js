@@ -8,6 +8,7 @@ contextBridge.exposeInMainWorld("api", {
   dns: () => ipcRenderer.invoke("dns-check"),
   speed: () => ipcRenderer.invoke("speed-test"),
   resolve: (d) => ipcRenderer.invoke("resolve-domain", d),
+  tracert: (host) => ipcRenderer.invoke("tracert", host),
 });
 
 contextBridge.exposeInMainWorld("windowCtl", {

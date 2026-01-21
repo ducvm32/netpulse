@@ -11,3 +11,30 @@ startPingRealtime();
 startDnsResolve();
 startSpeedCheck();
 startWifi();
+
+const btn = document.getElementById("btn-tracert");
+const output = document.getElementById("tracert-output");
+
+btn.addEventListener("click", async () => {
+  btn.disabled = true;
+  output.textContent = "Running tracert google.com...\n\n";
+
+  try {
+    const res = await window.api.tracert("google.com");
+
+    if (!res.ok) {
+      output.textContent += "Failed:\n" + res.error;
+      return;
+    }
+
+    res.hops.forEach((h) => {
+      output.textContent += h.raw + "\n";
+    });
+
+    output.textContent += "\nDone.";
+  } catch (e) {
+    output.textContent += "\nError: " + e.message;
+  } finally {
+    btn.disabled = false;
+  }
+});
